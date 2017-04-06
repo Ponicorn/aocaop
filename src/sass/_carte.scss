@@ -1,0 +1,25 @@
+@import 'var';
+
+.leaflet-wrapper {
+  flex-grow: 1;
+  display: flex;
+  background: blue;
+
+  .leaflet-container {
+    flex-grow: 1;
+  }
+  
+  .leaflet-popup-content-wrapper {
+    font-size: 1.1em;
+    color: inherit;
+    box-shadow: 0 3px 14px rgba(40,40,40,0.1);
+    border-radius: 1px;
+    h2 { margin: 0; }
+    .specialiteFlex span {color: $lite;}
+
+    .leaflet-popup-content {
+      margin: 10px 15px;
+    }
+
+  }
+}
