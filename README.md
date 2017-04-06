@@ -2,7 +2,7 @@
 
 ![French cock](http://www.reusableart.com/miwp/wp-content/uploads/2014/03/chickens-29.jpg)
 
-Exploitations des données suivante: https://www.data.gouv.fr/fr/datasets/aires-geographiques-des-aoc-aop/
+Exploitations des données suivante: https://www.data.gouv.fr/fr/datasets/aires-geographiques-des-aoc-aop/  
 Contour des départements: https://www.data.gouv.fr/fr/datasets/decoupage-administratif-communal-francais-issu-d-openstreetmap/, simplification à 100m & convertis au format geojson
 
 Une communes est listée pour une appelation AOC/AOP si au moins un producteurs du produit en question est present.  
