@@ -1,7 +1,8 @@
-const webpack = require('webpack')
+// const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
 
-const BUILD_DIR = path.resolve(__dirname, 'public/js')
+const BUILD_DIR = path.resolve(__dirname, 'public')
 const APP_DIR = path.resolve(__dirname, 'src')
 const WEBPACK_PORT = 3000
 
@@ -9,7 +10,7 @@ const config = {
   entry: path.resolve(APP_DIR, 'index.js'),
   output: {
     path: BUILD_DIR,
-    publicPath: '/js/',
+    publicPath: '/public',
     filename: 'bundle.js',
   },
 
@@ -17,14 +18,10 @@ const config = {
     rules: [
       {
         test: /\.s?css$/,
-        use: [{
-          loader: 'style-loader',
-        }, {
-          loader: 'css-loader',
-        }, {
-          loader: 'sass-loader',
-        }],
-
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader'],
+        }),
       },
       {
         test: /\.jsx?/,
@@ -34,8 +31,12 @@ const config = {
     ],
   },
 
+  plugins: [
+    new ExtractTextPlugin('style.css'),
+  ],
+
   devServer: {
-    contentBase: './public/',
+    contentBase: './',
     inline: true,
     port: WEBPACK_PORT,
     proxy: {
@@ -46,13 +47,5 @@ const config = {
   },
 
 }
-
-// config.plugins = (config.plugins || []).concat([
-//   new webpack.optimize.UglifyJsPlugin({
-//     sourceMap: true,
-//     compress: { warnings: false },
-//   }),
-//   new webpack.LoaderOptionsPlugin({ minimize: true }),
-// ])
 
 module.exports = config

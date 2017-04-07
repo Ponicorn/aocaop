@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack --progress --hide-modules"
+    "build": "webpack --progress --hide-modules --optimize-minimize "
   },
   "keywords": [],
   "author": "",
@@ -21,6 +21,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
+    "extract-text-webpack-plugin": "^2.1.0",
     "leaflet": "^1.0.3",
     "node-sass": "^4.5.1",
     "normalize.css": "^5.0.0",
